@@ -1,7 +1,7 @@
 <app-nav>
   <div right>
     <button aria-label="Cart" mat-icon-button>
-    <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent" matBadgePosition="before">shopping_cart</mat-icon>
+    <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent" matBadgePosition="before" (click)="openCart()">shopping_cart</mat-icon>
     </button>
     </div>
     <div class="products">
