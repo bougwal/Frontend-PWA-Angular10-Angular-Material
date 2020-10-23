@@ -16,6 +16,7 @@ import  {MatToolbarModule} from '@angular/material/toolbar';
 import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
+import { CartComponent } from './cart/cart.component';
 
 const matDesignModules = [ MatToolbarModule, MatButtonModule,
     MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
@@ -24,7 +25,8 @@ const matDesignModules = [ MatToolbarModule, MatButtonModule,
   declarations: [
     AppComponent,
     NavComponent,
-    AddToCartComponent
+    AddToCartComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +36,7 @@ const matDesignModules = [ MatToolbarModule, MatButtonModule,
     ...matDesignModules
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CartComponent]
 })
 export class AppModule { }
