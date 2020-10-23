@@ -1,7 +1,7 @@
 <app-nav>
   <div right>
     <button aria-label="Cart" mat-icon-button>
-    <mat-icon>shopping_cart</mat-icon>
+    <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent" matBadgePosition="before">shopping_cart</mat-icon>
     </button>
     </div>
     <div class="products">
@@ -19,7 +19,7 @@
       </mat-card-subtitle>
       <p>{{product.description}}</p>
       <mat-card-actions>
-        <app-add-to-cart></app-add-to-cart>
+        <app-add-to-cart [count]="cart[product._id]?.count || 0" (updateCount)="onAddProduct($event, product)"></app-add-to-cart>
       </mat-card-actions>
   </mat-card-content>
   </mat-card>
