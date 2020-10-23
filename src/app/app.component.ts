@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { CartComponent } from './cart/cart.component';
 import { CartService } from './cart.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import {ProductsService} from './products.service'
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -17,9 +19,20 @@ export class AppComponent implements OnInit {
   products$: Observable<any>;
   cart$ : Observable<any>
   cart;
-  constructor(private ps : ProductsService, private cartService: CartService , private dialgo: MatDialog) {
+  constructor(
+    private ps : ProductsService, private cartService: CartService ,
+    private dialgo: MatDialog, update: SwUpdate,
+    private snackBar: MatSnackBar) {
     this.products$ = this.ps.getProducts()
     this.cart$ = this.cartService.cart$.subscribe(cart => this.cart = cart);
+    update.available.subscribe(event => {
+      this.snackBar.open('A New Update is Available', 'Install Now', {
+        duration: 4000
+      }).onAction().subscribe(()=> {
+        update.activateUpdate().then(()=> location.reload())
+      });
+    });
+    update.checkForUpdate();
   }
 
   displayNetworkStatus(){
