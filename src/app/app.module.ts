@@ -17,6 +17,7 @@ import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { CartComponent } from './cart/cart.component';
+import { SubTotalPipe } from './sub-total.pipe';
 
 const matDesignModules = [ MatToolbarModule, MatButtonModule,
     MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
@@ -26,7 +27,8 @@ const matDesignModules = [ MatToolbarModule, MatButtonModule,
     AppComponent,
     NavComponent,
     AddToCartComponent,
-    CartComponent
+    CartComponent,
+    SubTotalPipe
   ],
   imports: [
     BrowserModule,
