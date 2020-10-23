@@ -18,6 +18,8 @@ import { NgModule } from '@angular/core';
 import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 import { CartComponent } from './cart/cart.component';
 import { SubTotalPipe } from './sub-total.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const matDesignModules = [ MatToolbarModule, MatButtonModule,
     MatSidenavModule, MatIconModule, MatListModule, MatCardModule,
@@ -35,7 +37,8 @@ const matDesignModules = [ MatToolbarModule, MatButtonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ...matDesignModules
+    ...matDesignModules,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent],
