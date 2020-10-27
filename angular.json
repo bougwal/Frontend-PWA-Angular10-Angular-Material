@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "es:build"
+            "browserTarget": "es:build",
+            "proxyConfig": "apps/es/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -132,6 +133,56 @@
           "options": {
             "tsConfig": "apps/es-e2e/tsconfig.json",
             "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "es-api": {
+      "root": "apps/es-api",
+      "sourceRoot": "apps/es-api/src",
+      "projectType": "application",
+      "prefix": "es-api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/es-api",
+            "main": "apps/es-api/src/main.ts",
+            "tsConfig": "apps/es-api/tsconfig.app.json",
+            "assets": ["apps/es-api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/es-api/src/environments/environment.ts",
+                  "with": "apps/es-api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "es-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/es-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/es-api/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
