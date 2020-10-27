@@ -20,6 +20,13 @@
     },
     "es-api": {
       "tags": []
+    },
+    "es-admin": {
+      "tags": []
+    },
+    "es-admin-e2e": {
+      "tags": [],
+      "implicitDependencies": ["es-admin"]
     }
   }
 }
