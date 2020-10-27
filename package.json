@@ -40,8 +40,12 @@
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
     "@angular/service-worker": "~10.0.14",
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
     "@nrwl/angular": "10.3.1",
     "http-server": "^0.12.3",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -51,13 +55,19 @@
     "@angular/cli": "~10.0.8",
     "@angular/compiler-cli": "~10.0.14",
     "@angular/language-service": "^10.1.0",
+    "@nestjs/schematics": "^7.0.0",
+    "@nestjs/testing": "^7.0.0",
+    "@nrwl/cypress": "10.3.1",
     "@nrwl/jest": "10.3.1",
+    "@nrwl/nest": "10.3.1",
+    "@nrwl/node": "10.3.1",
     "@nrwl/workspace": "10.3.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/jest": "26.0.8",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "cypress": "^4.1.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",
     "jest": "26.2.2",
@@ -72,8 +82,6 @@
     "ts-jest": "26.4.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.9.5",
-    "cypress": "^4.1.0",
-    "@nrwl/cypress": "10.3.1"
+    "typescript": "~3.9.5"
   }
 }
