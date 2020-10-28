@@ -27,6 +27,9 @@
     "es-admin-e2e": {
       "tags": [],
       "implicitDependencies": ["es-admin"]
+    },
+    "shared": {
+      "tags": []
     }
   }
 }
