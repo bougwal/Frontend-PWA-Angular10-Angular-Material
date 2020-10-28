@@ -41,6 +41,7 @@
     "@angular/router": "~10.0.14",
     "@angular/service-worker": "~10.0.14",
     "@auth0/angular-jwt": "^5.0.1",
+    "@momentum-ui/angular": "^11.7.7",
     "@nestjs/common": "^5.5.0",
     "@nestjs/core": "^5.5.0",
     "@nestjs/platform-express": "^7.0.0",
